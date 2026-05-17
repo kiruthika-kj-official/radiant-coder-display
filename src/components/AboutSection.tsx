@@ -1,16 +1,15 @@
-import { User, Briefcase, MapPin, GraduationCap, Heart } from "lucide-react";
+import { User, Palette, MapPin, Figma, Sparkles } from "lucide-react";
 
 const highlights = [
-  { icon: GraduationCap, label: "B.Tech AI & DS", detail: "CGPA 8.43" },
-  { icon: Briefcase, label: "IBM Intern", detail: "MERN Stack" },
-  { icon: MapPin, label: "Karur, TN", detail: "India" },
-  { icon: Heart, label: "Passionate", detail: "Problem Solver" },
+  { icon: Figma, label: "Design Tools", detail: "Figma, Canva, XD" },
+  { icon: Palette, label: "Creative", detail: "UI/UX Designer" },
+  { icon: MapPin, label: "Erode", detail: "Tamil Nadu" },
+  { icon: Sparkles, label: "Passionate", detail: "Visual Thinker" },
 ];
 
 export default function AboutSection() {
   return (
     <section id="about" className="section-padding relative overflow-hidden">
-      {/* Background accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -20,26 +19,24 @@ export default function AboutSection() {
         <div className="w-16 h-1 rounded-full bg-primary mb-10 scroll-reveal" style={{ transitionDelay: "80ms" }} />
 
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Main bio card */}
           <div className="md:col-span-2 glass-card p-8 md:p-10 glow-border scroll-reveal" style={{ transitionDelay: "160ms" }}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                 <User size={24} className="text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Kiruthika K</h3>
-                <p className="text-sm text-muted-foreground">AI & Data Science Student</p>
+                <h3 className="font-semibold text-lg">Kiruthika</h3>
+                <p className="text-sm text-muted-foreground">UI/UX & Creative Designer</p>
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed text-base mb-4">
-              Pre-final year B.Tech student in Artificial Intelligence and Data Science at Chettinad College of Engineering & Technology, Karur. I'm seeking opportunities to apply my technical skills, problem-solving ability, and innovation in real-world projects.
+              I am a passionate UI/UX and creative designer interested in building visually appealing and user-friendly digital experiences. I enjoy creating wireframes, interfaces and modern responsive designs using Figma and frontend technologies.
             </p>
             <p className="text-muted-foreground leading-relaxed text-base">
-              With hands-on experience in MERN Stack development through my IBM internship, I'm passionate about building impactful applications that solve real problems. I love exploring new technologies and turning ideas into working products.
+              My focus is on crafting intuitive flows, clean visual hierarchy, and pixel-perfect interfaces that delight users and tell a clear product story.
             </p>
           </div>
 
-          {/* Quick info cards */}
           <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
             {highlights.map((item, i) => (
               <div

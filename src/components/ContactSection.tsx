@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Sparkles, Linkedin } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "kj.kiruthika2006@gmail.com", href: "mailto:kj.kiruthika2006@gmail.com" },
+  { icon: Mail, label: "Gmail", value: "kj.kiruthika2006@gmail.com", href: "mailto:kj.kiruthika2006@gmail.com" },
+  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/kiruthika-k", href: "https://www.linkedin.com/in/kiruthika-k-676547352" },
   { icon: Phone, label: "Phone", value: "+91 6383375257", href: "tel:+916383375257" },
-  { icon: MapPin, label: "Location", value: "Kattuputhur, Trichy – 621207", href: null },
+  { icon: MapPin, label: "Location", value: "Erode, Tamil Nadu", href: null },
 ];
 
 export default function ContactSection() {
@@ -12,7 +13,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Form submitted! (placeholder)");
+    alert("Thanks! I'll get back to you soon.");
   };
 
   return (
@@ -28,23 +29,23 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6 scroll-reveal" style={{ transitionDelay: "120ms" }}>
             <p className="text-muted-foreground leading-relaxed">
-              Feel free to reach out for collaborations, internship opportunities, or just a friendly chat. I'll get back to you as soon as possible.
+              Open to UI/UX internships, design collaborations, and freelance opportunities. Let's create something beautiful together.
             </p>
-            <div className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               {contactInfo.map((item) => {
                 const Wrapper = item.href ? 'a' : 'div';
                 return (
                   <Wrapper
                     key={item.label}
-                    {...(item.href ? { href: item.href } : {})}
+                    {...(item.href ? { href: item.href, target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="flex items-center gap-3 group hover-lift glass-card p-4"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                       <item.icon size={18} className="text-primary" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-xs text-muted-foreground">{item.label}</p>
-                      <p className="text-sm font-medium group-hover:text-primary transition-colors">{item.value}</p>
+                      <p className="text-sm font-medium group-hover:text-primary transition-colors truncate">{item.value}</p>
                     </div>
                   </Wrapper>
                 );
@@ -83,7 +84,7 @@ export default function ContactSection() {
             />
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:shadow-[0_0_24px_-4px_hsl(var(--primary)/0.5)] active:scale-[0.97] transition-all duration-200 hover:scale-[1.02]"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-[hsl(300,80%,65%)] text-primary-foreground font-semibold text-sm hover:shadow-[0_0_28px_-2px_hsl(var(--primary)/0.7)] active:scale-[0.97] transition-all duration-200 hover:scale-[1.02]"
             >
               Send Message <Send size={16} />
             </button>
