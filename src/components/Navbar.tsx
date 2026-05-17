@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const NAV_ITEMS = ["Home", "About", "Skills", "Projects", "Design", "Education", "Contact"];
+const NAV_ITEMS = ["Home", "About", "Skills", "Projects", "Design", "Contact"];
 
 export default function Navbar() {
   const [active, setActive] = useState("Home");
@@ -33,7 +33,7 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass-nav shadow-lg" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
         <button onClick={() => scrollTo("Home")} className="text-lg font-bold glow-text tracking-tight">
-          Portfolio
+          Kiruthika
         </button>
 
         {/* Desktop */}

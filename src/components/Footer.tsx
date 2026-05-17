@@ -1,18 +1,17 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Mail, Figma } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/kiruthika-k-676547352", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Mail, href: "mailto:kj.kiruthika2006@gmail.com", label: "Email" },
+  { icon: Figma, href: "#", label: "Figma" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-glass-border py-10 px-4">
+    <footer className="border-t border-glass-border py-10 px-4 relative">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Kiruthika K. All rights reserved.
+          Designed by <span className="text-primary font-semibold">Kiruthika</span> © 2026
         </p>
         <div className="flex items-center gap-3">
           {socials.map(({ icon: Icon, href, label }) => (

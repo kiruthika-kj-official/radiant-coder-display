@@ -1,25 +1,26 @@
-import { Folder } from "lucide-react";
+import { Folder, Smartphone, Globe, Layout } from "lucide-react";
 
 const projects = [
   {
-    title: "Neuro AI: Smart Education System",
-    description: "An AI-powered smart education platform that personalizes learning experiences and adapts to each student's needs using intelligent algorithms.",
-    tech: ["React", "Node.js", "AI", "MongoDB"],
+    title: "Food Delivery App UI",
+    description: "Designed a modern mobile app UI for food ordering with clean navigation and user-friendly experience.",
+    tools: ["Figma", "Canva"],
+    icon: Smartphone,
+    gradient: "from-[hsl(270,80%,60%)] to-[hsl(300,80%,65%)]",
   },
   {
-    title: "Deep Learning Based Healthcare Application",
-    description: "An AI-powered healthcare application leveraging deep learning models for medical data analysis and prediction.",
-    tech: ["Python", "Deep Learning", "TensorFlow"],
+    title: "College Event Website",
+    description: "Created responsive event registration website wireframes and UI mockups.",
+    tools: ["Figma", "Photoshop"],
+    icon: Globe,
+    gradient: "from-[hsl(260,80%,60%)] to-[hsl(280,90%,65%)]",
   },
   {
-    title: "Blood Bank Management System",
-    description: "A comprehensive system for managing blood bank operations including donor records, inventory, and distribution tracking.",
-    tech: ["Python", "MySQL", "Flask"],
-  },
-  {
-    title: "Chatbot",
-    description: "An intelligent conversational chatbot capable of understanding user queries and providing relevant responses.",
-    tech: ["Python", "NLP", "AI"],
+    title: "Portfolio Website Design",
+    description: "Designed and developed a personal portfolio website with modern dark theme UI.",
+    tools: ["Lovable", "HTML", "CSS"],
+    icon: Layout,
+    gradient: "from-[hsl(280,80%,55%)] to-[hsl(260,80%,65%)]",
   },
 ];
 
@@ -30,37 +31,45 @@ export default function ProjectsSection() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 scroll-reveal">
-          My <span className="glow-text">Projects</span>
+          Featured <span className="glow-text">Projects</span>
         </h2>
         <div className="w-16 h-1 rounded-full bg-primary mb-12 scroll-reveal" style={{ transitionDelay: "80ms" }} />
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className="glass-card p-6 hover-lift group scroll-reveal relative overflow-hidden"
-              style={{ transitionDelay: `${120 + i * 100}ms` }}
+              className="glass-card p-0 hover-lift group scroll-reveal relative overflow-hidden"
+              style={{ transitionDelay: `${120 + i * 120}ms` }}
             >
-              {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <Folder size={18} className="text-primary" />
+              <div className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.25),transparent_60%)]" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <project.icon size={60} className="text-white/90 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500" />
                 </div>
-                <h3 className="text-lg font-semibold group-hover:text-primary transition-colors pt-1">
-                  {project.title}
-                </h3>
+                <div className="absolute top-3 left-3 flex gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-white/40" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-white/40" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-white/40" />
+                </div>
               </div>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-5">
-                {project.tech.map((t) => (
-                  <span key={t} className="mono text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary/80 border border-primary/20">
-                    {t}
-                  </span>
-                ))}
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Folder size={16} className="text-primary" />
+                  <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tools.map((t) => (
+                    <span key={t} className="mono text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary/80 border border-primary/20">
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
