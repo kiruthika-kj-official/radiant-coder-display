@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Sparkles, Download } from "lucide-react";
 import profileImg from "@/assets/profile-kiruthika.jpeg";
 
 export default function HeroSection() {
@@ -12,7 +12,7 @@ export default function HeroSection() {
         <div className="space-y-6">
           <span className="inline-flex items-center gap-2 mono text-xs tracking-widest uppercase text-primary border border-primary/30 rounded-full px-4 py-1.5 scroll-reveal animate-pulse-glow">
             <Sparkles size={14} />
-            Available for UI/UX Internships
+            Available for Opportunities
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight scroll-reveal" style={{ transitionDelay: "100ms" }}>
             Hi, I'm{" "}
@@ -36,6 +36,13 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-glass-border text-foreground font-semibold text-sm hover:bg-secondary hover:border-primary/50 transition-all duration-200 active:scale-[0.97] hover:scale-105"
             >
               Contact Me <Mail size={16} />
+            </a>
+            <a
+              href="/Kiruthika_K_Resume.pdf"
+              download="Kiruthika_K_Resume.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/40 text-primary font-semibold text-sm hover:bg-primary/10 hover:border-primary transition-all duration-200 active:scale-[0.97] hover:scale-105"
+            >
+              Resume <Download size={16} />
             </a>
           </div>
         </div>

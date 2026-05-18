@@ -1,4 +1,4 @@
-import { Figma, Palette, Image as ImageIcon, PenTool, Layers, Layout, Lightbulb, Search, Smartphone, Code2, FileCode, Braces, Sparkles, Database, BarChart3, FileText, Users, MessageSquare, Puzzle, Crown } from "lucide-react";
+import { Figma, Palette, Image as ImageIcon, Code2, FileCode, Braces, Sparkles, Database, BarChart3, FileText, Users, MessageSquare, Puzzle, Crown } from "lucide-react";
 
 const groups = [
   {
@@ -9,38 +9,16 @@ const groups = [
       { name: "MERN Stack", icon: Code2 },
       { name: "MySQL", icon: Database },
       { name: "Power BI (Basics)", icon: BarChart3 },
-      { name: "MS Office (Word, Excel)", icon: FileText },
+      { name: "MS Office (Word, Excel – basic)", icon: FileText },
     ],
   },
   {
-    title: "Design Tools",
+    title: "UI & UX",
     icon: Palette,
     skills: [
       { name: "Figma", icon: Figma },
       { name: "Canva", icon: ImageIcon },
       { name: "Adobe Photoshop (Basic)", icon: ImageIcon },
-      { name: "Illustrator", icon: PenTool },
-      { name: "Adobe XD", icon: Layers },
-    ],
-  },
-  {
-    title: "UI/UX Skills",
-    icon: Layout,
-    skills: [
-      { name: "Wireframing", icon: Layout },
-      { name: "Prototyping", icon: Layers },
-      { name: "User Research", icon: Search },
-      { name: "Responsive Design", icon: Smartphone },
-      { name: "Design Thinking", icon: Lightbulb },
-    ],
-  },
-  {
-    title: "Frontend Skills",
-    icon: Code2,
-    skills: [
-      { name: "HTML", icon: FileCode },
-      { name: "CSS", icon: FileCode },
-      { name: "JavaScript", icon: Braces },
     ],
   },
   {
@@ -87,11 +65,10 @@ export default function SkillsSection() {
                   <h3 className="font-semibold text-lg">{group.title}</h3>
                 </div>
                 <ul className="space-y-2.5">
-                  {group.skills.map((s, i) => (
+                  {group.skills.map((s) => (
                     <li
                       key={s.name}
                       className="flex items-center gap-3 p-2.5 rounded-lg bg-secondary/40 border border-glass-border hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 hover:translate-x-1"
-                      style={{ animationDelay: `${i * 50}ms` }}
                     >
                       <s.icon size={16} className="text-primary shrink-0" />
                       <span className="text-sm font-medium">{s.name}</span>
